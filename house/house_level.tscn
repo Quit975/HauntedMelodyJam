@@ -19,7 +19,7 @@ background_mode = 2
 sky = SubResource("Sky_lx1vo")
 tonemap_mode = 2
 ssao_enabled = true
-ssao_radius = 6.0
+ssao_radius = 10.0
 ssao_intensity = 16.0
 ssao_horizon = 0.16
 ssao_sharpness = 0.17
@@ -42,7 +42,9 @@ environment = SubResource("Environment_4cm1w")
 transform = Transform3D(0.130665, 0, 0.991427, 0, 1, 0, -0.991427, 0, 0.130665, 0.728344, 0.0381176, 1.52876)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="player"]
-transform = Transform3D(0.130665, 0, -0.991426, 0, 1, 0, 0.991426, 0, 0.130665, 0, 0, 0)
+transform = Transform3D(0.130665, 0, -0.991426, 0, 1, 0, 0.991426, 0, 0.130665, 0, 0.506808, 0)
+light_energy = 0.3
+light_indirect_energy = 0.2
 omni_range = 6.9416
 omni_attenuation = 3.13834
 

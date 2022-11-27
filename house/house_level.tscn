@@ -1,43 +1,74 @@
-[gd_scene load_steps=7 format=3 uid="uid://iqi84ubpi75g"]
+[gd_scene load_steps=8 format=3 uid="uid://iqi84ubpi75g"]
 
 [ext_resource type="PackedScene" uid="uid://bf5vdg7xml4j8" path="res://player/player_scene.tscn" id="1_hfhkx"]
+[ext_resource type="Script" path="res://game_logic/full_screen_toggle.gd" id="1_syb8m"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6qhsb"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5qdpv"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.5, 0.5, 0.5, 1)
+sky_energy_multiplier = 0.0
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.5, 0.5, 0.5, 1)
 
-[sub_resource type="Sky" id="Sky_3xy1d"]
-sky_material = SubResource("ProceduralSkyMaterial_6qhsb")
+[sub_resource type="Sky" id="Sky_lx1vo"]
+sky_material = SubResource("ProceduralSkyMaterial_5qdpv")
 
-[sub_resource type="Environment" id="Environment_s8rwm"]
+[sub_resource type="Environment" id="Environment_4cm1w"]
 background_mode = 2
-sky = SubResource("Sky_3xy1d")
+sky = SubResource("Sky_lx1vo")
 tonemap_mode = 2
-glow_enabled = true
+ssao_enabled = true
+ssao_radius = 16.0
+ssao_intensity = 16.0
+ssao_horizon = 0.16
+ssao_sharpness = 0.17
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4ms8l"]
-size = Vector3(25, 0.2, 25)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itfww"]
+albedo_color = Color(0.321569, 0.270588, 0.172549, 1)
+metallic_specular = 0.23
 
-[sub_resource type="BoxMesh" id="BoxMesh_cg6x5"]
-size = Vector3(25, 0.2, 25)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7t7al"]
+metallic_specular = 0.22
+roughness = 0.81
 
-[node name="Node3D" type="Node3D"]
+[node name="LevelOrigin" type="Node3D"]
+script = ExtResource("1_syb8m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_s8rwm")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
+environment = SubResource("Environment_4cm1w")
 
 [node name="player" parent="." instance=ExtResource("1_hfhkx")]
-transform = Transform3D(0.130665, 0, 0.991427, 0, 1, 0, -0.991427, 0, 0.130665, 0.728344, 0.631235, 1.52876)
+transform = Transform3D(0.130665, 0, 0.991427, 0, 1, 0, -0.991427, 0, 0.130665, 0.728344, 0.0381176, 1.52876)
 
-[node name="floor" type="StaticBody3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="player"]
+transform = Transform3D(0.130665, 0, -0.991426, 0, 1, 0, 0.991426, 0, 0.130665, 0, 0, 0)
+omni_range = 7.797
+omni_attenuation = 3.13834
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
-shape = SubResource("BoxShape3D_4ms8l")
+[node name="OtherRoom" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.03215)
+use_collision = true
+flip_faces = true
+size = Vector3(5, 2.5, 4)
+material = SubResource("StandardMaterial3D_itfww")
 
-[node name="floor_mesh" type="MeshInstance3D" parent="floor/CollisionShape3D"]
-mesh = SubResource("BoxMesh_cg6x5")
-skeleton = NodePath("../../..")
+[node name="Door" type="CSGBox3D" parent="OtherRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.355796, 1.98465)
+operation = 2
+size = Vector3(1.4, 1.8, -0.161)
+
+[node name="MainRoom" type="CSGBox3D" parent="."]
+use_collision = true
+flip_faces = true
+size = Vector3(15, 2.5, 10)
+material = SubResource("StandardMaterial3D_7t7al")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MainRoom"]
+transform = Transform3D(0.790176, -3.76379e-08, 0.61288, -0.513841, 0.545049, 0.662487, -0.334049, -0.838404, 0.430685, -5.91012, 1.79704, 4.81804)
+spot_range = 4.64006
+spot_angle = 24.7355
+
+[node name="Door" type="CSGBox3D" parent="MainRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00290287, -0.355796, -4.99235)
+operation = 2
+size = Vector3(1.4, 1.8, -0.241)

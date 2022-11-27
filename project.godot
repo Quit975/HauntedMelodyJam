@@ -16,6 +16,18 @@ config/features=PackedStringArray("4.0", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
+window/size/borderless=true
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/stretch/scale=5.0
+
 [dotnet]
 
 project/assembly_name="HauntedMelody"
@@ -69,5 +81,5 @@ look_right={
 
 [player]
 
-mouse_look_sensitivity=0.1
+mouse_look_sensitivity=0.3
 gamepad_look_sensitivity=3.0

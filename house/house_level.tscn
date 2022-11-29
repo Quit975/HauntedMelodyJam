@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://iqi84ubpi75g"]
 
-[ext_resource type="PackedScene" uid="uid://bf5vdg7xml4j8" path="res://player/player_scene.tscn" id="1_hfhkx"]
+[ext_resource type="PackedScene" uid="uid://b05xjcdekdfsr" path="res://player/player_scene.tscn" id="1_hfhkx"]
 [ext_resource type="Script" path="res://game_logic/full_screen_toggle.gd" id="1_syb8m"]
 [ext_resource type="PackedScene" uid="uid://dbal2nequ8jam" path="res://house/props/piano/piano.tscn" id="3_2nsjv"]
 

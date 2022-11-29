@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Area3D",
+"class": &"InteractionArea",
+"language": &"GDScript",
+"path": "res://game_logic/interaction_area/interaction_area.gd"
+}]
+_global_script_class_icons={
+"InteractionArea": ""
+}
+
 [application]
 
 config/name="HauntedMelody"
@@ -78,6 +88,11 @@ look_right={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="World"
+3d_physics/layer_2="Interaction"
 
 [player]
 

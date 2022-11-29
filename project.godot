@@ -9,12 +9,18 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Node3D",
+"class": &"InteractableEntity",
+"language": &"GDScript",
+"path": "res://house/props/interactable_entity.gd"
+}, {
 "base": "Area3D",
 "class": &"InteractionArea",
 "language": &"GDScript",
 "path": "res://game_logic/interaction_area/interaction_area.gd"
 }]
 _global_script_class_icons={
+"InteractableEntity": "",
 "InteractionArea": ""
 }
 

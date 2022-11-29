@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://iqi84ubpi75g"]
+[gd_scene load_steps=10 format=3 uid="uid://iqi84ubpi75g"]
 
 [ext_resource type="PackedScene" uid="uid://b05xjcdekdfsr" path="res://player/player_scene.tscn" id="1_hfhkx"]
 [ext_resource type="Script" path="res://game_logic/full_screen_toggle.gd" id="1_syb8m"]
-[ext_resource type="PackedScene" uid="uid://dbal2nequ8jam" path="res://house/props/piano/piano.tscn" id="3_2nsjv"]
+[ext_resource type="PackedScene" uid="uid://053j4rfg8srd" path="res://house/props/piano/props_piano_entity.tscn" id="3_a5gge"]
+[ext_resource type="PackedScene" uid="uid://bo7k4y412sukt" path="res://house/props/test_interaction_prop/test_interaction_prop.tscn" id="4_xupc8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5qdpv"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -76,5 +77,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00290287, -0.355796, -4.99
 operation = 2
 size = Vector3(1.4, 1.8, -0.241)
 
-[node name="Piano" parent="MainRoom" instance=ExtResource("3_2nsjv")]
-transform = Transform3D(-0.00664961, 0, 0.999978, 0, 1, 0, -0.999978, 0, -0.00664961, -7.14488, -1.17674, 2.00301)
+[node name="Piano" parent="MainRoom" instance=ExtResource("3_a5gge")]
+transform = Transform3D(0.00560253, 0, 0.999984, 0, 1, 0, -0.999984, 0, 0.00560253, -7.1718, -1.25, 1.92226)
+
+[node name="TestInteraction" parent="MainRoom" instance=ExtResource("4_xupc8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11017, -1.25, 3.9687)
+
+[node name="TestInteraction2" parent="MainRoom" instance=ExtResource("4_xupc8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88504, -1.25, 3.9687)

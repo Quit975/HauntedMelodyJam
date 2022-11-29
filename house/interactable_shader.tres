@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c6exa2k85608d"]
+
+[ext_resource type="Shader" path="res://house/interactable_shader.gdshader" id="1_tpisk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tpisk")

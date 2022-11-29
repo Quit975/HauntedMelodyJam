@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo7k4y412sukt"]
+
+[ext_resource type="PackedScene" uid="uid://hm7alhbg01yj" path="res://house/props/interactable_entity.tscn" id="1_tadlj"]
+[ext_resource type="Material" uid="uid://c6exa2k85608d" path="res://house/interactable_shader.tres" id="2_nm7yw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmi1p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sfvs4"]
+next_pass = ExtResource("2_nm7yw")
+albedo_color = Color(0.309804, 0, 0.00784314, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ottf"]
+material = SubResource("StandardMaterial3D_sfvs4")
+
+[node name="TestInteraction" instance=ExtResource("1_tadlj")]
+
+[node name="CollisionShape" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_hmi1p")
+
+[node name="Mesh" parent="StaticBody3D" index="1"]
+mesh = SubResource("BoxMesh_4ottf")
+
+[node name="InteractionArea" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0362673, 0)
+sphere_radius = 1.0

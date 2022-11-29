@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cwpq3s4pt36d2"
+uid="uid://duaisml6r475q"
 path="res://.godot/imported/piano.glb-0ecc27fe93a314ea6f81a21bcf987f7d.scn"
 
 [deps]
@@ -26,4 +26,23 @@ skins/use_named_skins=true
 animation/import=true
 animation/fps=30
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"PianoMat": {
+"use_external/enabled": true,
+"use_external/path": "res://house/props/piano/PianoMat.tres"
+}
+},
+"meshes": {
+"piano_Cube001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://house/props/piano/piano_Cube001.res"
+}
+}
+}

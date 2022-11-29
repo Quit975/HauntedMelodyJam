@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://hm7alhbg01yj"]
+
+[ext_resource type="PackedScene" uid="uid://b2525ct0pp1lr" path="res://game_logic/interaction_area/interaction_area.tscn" id="1_2r20c"]
+[ext_resource type="Script" path="res://house/props/interactable_entity.gd" id="1_jvqvh"]
+
+[node name="InteractableEntity" type="Node3D"]
+script = ExtResource("1_jvqvh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="StaticBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="StaticBody3D"]
+skeleton = NodePath("../CollisionShape")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_2r20c")]

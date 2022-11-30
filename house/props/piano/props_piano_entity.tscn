@@ -17,3 +17,4 @@ mesh = ExtResource("2_jf47d")
 
 [node name="InteractionArea" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712315, 0.145899)
+sphere_radius = 0.6

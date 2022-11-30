@@ -5,7 +5,7 @@ extends Area3D
 signal interaction_signal(interaction_enabled : bool);
 var interaction_available : bool = false;
 
-@onready @export var sphere_radius : float = 0.5 : set = set_interaction_radius;
+@export var sphere_radius : float = 0.5 : set = set_interaction_radius;
 var interaction_shape : SphereShape3D;
 
 # Called when the node enters the scene tree for the first time.

@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "AudioStreamPlayer3D",
+"class": &"FootstepPlayer",
+"language": &"GDScript",
+"path": "res://player/Footsteps.gd"
+}, {
 "base": "Node3D",
 "class": &"InteractableEntity",
 "language": &"GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[{
 "path": "res://game_logic/interaction_area/interaction_area.gd"
 }]
 _global_script_class_icons={
+"FootstepPlayer": "",
 "InteractableEntity": "",
 "InteractionArea": ""
 }

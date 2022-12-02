@@ -17,7 +17,7 @@ ground_horizon_color = Color(0.5, 0.5, 0.5, 1)
 sky_material = SubResource("ProceduralSkyMaterial_5qdpv")
 
 [sub_resource type="Environment" id="Environment_4cm1w"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_lx1vo")
 tonemap_mode = 2
 ssao_enabled = true
@@ -91,7 +91,8 @@ transform = Transform3D(0.130665, 0, 0.991427, 0, 1, 0, -0.991427, 0, 0.130665, 
 
 [node name="OmniLight3D" type="OmniLight3D" parent="GridMap/player"]
 transform = Transform3D(0.130665, 0, -0.991426, 0, 1, 0, 0.991426, 0, 0.130665, 0, 0.506808, 0)
-light_energy = 0.3
-light_indirect_energy = 0.2
-omni_range = 6.9416
-omni_attenuation = 3.13834
+light_energy = 0.2
+light_indirect_energy = 0.5
+light_specular = 0.0
+omni_range = 8.0
+omni_attenuation = 3.24901

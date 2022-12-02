@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b05xjcdekdfsr"]
+[gd_scene load_steps=5 format=3 uid="uid://b05xjcdekdfsr"]
 
 [ext_resource type="Script" path="res://player/player_controller.gd" id="1_yrh7y"]
 [ext_resource type="PackedScene" uid="uid://7wbj6i6xlm4g" path="res://player/interaction_component/interaction_component.tscn" id="2_phdc2"]
+[ext_resource type="Script" path="res://player/Footsteps.gd" id="3_yh4hk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qva23"]
 radius = 0.3
@@ -22,3 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.514944, 0)
 [node name="RayCast3D" parent="CollisionShape3D/CameraPivot/Camera3D" instance=ExtResource("2_phdc2")]
 target_position = Vector3(0, 0, -1.5)
 ray_length = 1.5
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.624149, 0)
+script = ExtResource("3_yh4hk")

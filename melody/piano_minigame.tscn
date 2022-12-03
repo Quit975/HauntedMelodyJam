@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://g6yg3bq1n1gg"]
+
+[ext_resource type="Script" path="res://melody/piano_minigame.gd" id="1_1q20g"]
+
+[node name="PianoRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1q20g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="FreeTimer" type="Timer" parent="."]
+one_shot = true

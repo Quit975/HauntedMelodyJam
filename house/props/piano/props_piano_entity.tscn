@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://053j4rfg8srd"]
+[gd_scene load_steps=5 format=3 uid="uid://053j4rfg8srd"]
 
 [ext_resource type="PackedScene" uid="uid://hm7alhbg01yj" path="res://house/props/interactable_entity.tscn" id="1_e6wrr"]
+[ext_resource type="Script" path="res://house/props/piano/props_piano_entity.gd" id="2_7qmrq"]
 [ext_resource type="ArrayMesh" uid="uid://dmcae6thdykbc" path="res://house/props/piano/props_piano_mesh.res" id="2_jf47d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mghl4"]
 size = Vector3(1.557, 1, 0.504)
 
 [node name="Piano" instance=ExtResource("1_e6wrr")]
+script = ExtResource("2_7qmrq")
 
 [node name="CollisionShape" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525263, 0)
@@ -16,5 +18,4 @@ shape = SubResource("BoxShape3D_mghl4")
 mesh = ExtResource("2_jf47d")
 
 [node name="InteractionArea" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712315, 0.145899)
-sphere_radius = 0.6
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712315, -0.0409364)

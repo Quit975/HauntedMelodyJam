@@ -70,9 +70,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11017, -1.25, 3.9687)
 [node name="TestInteraction2" parent="MainRoom" instance=ExtResource("4_xupc8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88504, -1.25, 3.9687)
 
-[node name="Piano" parent="MainRoom" instance=ExtResource("3_a5gge")]
-transform = Transform3D(-0.0183773, 0, -0.999831, 0, 1, 0, 0.999831, 0, -0.0183773, 15.1061, -1.25, 1.92227)
-
 [node name="SpotLight3D" type="SpotLight3D" parent="MainRoom"]
 transform = Transform3D(-0.35476, 0.158579, -0.921411, -0.643075, 0.673985, 0.363591, 0.678675, 0.721524, -0.137125, 12.2693, 0.98188, 1.41305)
 spot_range = 4.64006
@@ -96,3 +93,6 @@ light_indirect_energy = 0.5
 light_specular = 0.0
 omni_range = 8.0
 omni_attenuation = 3.24901
+
+[node name="Piano" parent="GridMap" instance=ExtResource("3_a5gge")]
+transform = Transform3D(-0.999954, 0, -0.00959918, 0, 1, 0, 0.00959918, 0, -0.999954, 0, 1.33865, 1.53809)

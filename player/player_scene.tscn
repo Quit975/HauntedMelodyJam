@@ -8,7 +8,7 @@
 radius = 0.3
 height = 1.6
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815956, 0)
 script = ExtResource("1_yrh7y")
 
@@ -20,10 +20,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.514944, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CollisionShape3D/CameraPivot"]
 
-[node name="RayCast3D" parent="CollisionShape3D/CameraPivot/Camera3D" instance=ExtResource("2_phdc2")]
-target_position = Vector3(0, 0, -1.5)
-ray_length = 1.5
+[node name="InteractionNode" parent="CollisionShape3D/CameraPivot/Camera3D" instance=ExtResource("2_phdc2")]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -0.5)
+ray_length = 0.5
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.624149, 0)
 script = ExtResource("3_yh4hk")

@@ -29,6 +29,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://player/interaction_component/interaction_component.gd"
 }, {
+"base": "Control",
+"class": &"PianoKeysWidget",
+"language": &"GDScript",
+"path": "res://melody/piano_keys/piano_keys_widget.gd"
+}, {
 "base": "CharacterBody3D",
 "class": &"Player",
 "language": &"GDScript",
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "InteractableEntity": "",
 "InteractionArea": "",
 "InteractionNode": "",
+"PianoKeysWidget": "",
 "Player": ""
 }
 
@@ -52,15 +58,12 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=426
+window/size/viewport_height=240
 window/size/resizable=false
 window/size/borderless=true
-window/size/window_width_override=960
-window/size/window_height_override=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-window/stretch/scale=5.0
 
 [dotnet]
 

@@ -1,17 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://g6yg3bq1n1gg"]
+[gd_scene load_steps=3 format=3 uid="uid://g6yg3bq1n1gg"]
 
 [ext_resource type="Script" path="res://melody/piano_minigame.gd" id="1_1q20g"]
+[ext_resource type="PackedScene" uid="uid://bl21g2udm0fpo" path="res://melody/piano_keys/piano_keys_widget.tscn" id="2_tn3c6"]
 
-[node name="PianoRoot" type="Control"]
+[node name="PianoMinigameRoot" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1q20g")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
 [node name="FreeTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="AudioPlayer_1" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioPlayer_2" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioPlayer_3" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioPlayer_4" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="PianoKeysRoot" parent="." instance=ExtResource("2_tn3c6")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -50.0
+offset_top = -29.0
+offset_right = 49.0
+offset_bottom = 37.0
+grow_horizontal = 1
+grow_vertical = 1

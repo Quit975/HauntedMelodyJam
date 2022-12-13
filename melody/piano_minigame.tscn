@@ -28,7 +28,6 @@ one_shot = true
 [node name="AudioPlayer_4" type="AudioStreamPlayer" parent="AudioPlayers"]
 
 [node name="PianoKeysRoot" parent="." instance=ExtResource("2_tn3c6")]
-layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

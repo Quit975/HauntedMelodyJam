@@ -62,6 +62,8 @@ window/size/viewport_width=426
 window/size/viewport_height=240
 window/size/resizable=false
 window/size/borderless=true
+window/size/window_width_override=852
+window/size/window_height_override=480
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

@@ -10,6 +10,7 @@ height = 1.6
 
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815956, 0)
+floor_constant_speed = true
 script = ExtResource("1_yrh7y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

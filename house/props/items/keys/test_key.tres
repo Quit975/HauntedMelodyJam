@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c4bhtbh88otyh"]
+
+[ext_resource type="Script" path="res://house/props/items/game_item.gd" id="1_kh00w"]
+
+[resource]
+script = ExtResource("1_kh00w")

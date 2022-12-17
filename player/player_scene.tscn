@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b05xjcdekdfsr"]
+[gd_scene load_steps=6 format=3 uid="uid://b05xjcdekdfsr"]
 
 [ext_resource type="Script" path="res://player/player_controller.gd" id="1_yrh7y"]
 [ext_resource type="PackedScene" uid="uid://7wbj6i6xlm4g" path="res://player/interaction_component/interaction_component.tscn" id="2_phdc2"]
 [ext_resource type="Script" path="res://player/Footsteps.gd" id="3_yh4hk"]
+[ext_resource type="PackedScene" uid="uid://b371l37abpogl" path="res://player/inventory_component/inventory_component.tscn" id="4_ehw2h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qva23"]
 radius = 0.3
@@ -30,3 +31,6 @@ ray_length = 0.5
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.624149, 0)
 script = ExtResource("3_yh4hk")
+
+[node name="Inventory" parent="." instance=ExtResource("4_ehw2h")]
+unique_name_in_owner = true

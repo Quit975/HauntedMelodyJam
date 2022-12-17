@@ -29,6 +29,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://player/interaction_component/interaction_component.gd"
 }, {
+"base": "Node",
+"class": &"InventoryNode",
+"language": &"GDScript",
+"path": "res://player/inventory_component/inventory_component.gd"
+}, {
+"base": "Resource",
+"class": &"Item",
+"language": &"GDScript",
+"path": "res://house/props/items/game_item.gd"
+}, {
 "base": "Control",
 "class": &"PianoKeysWidget",
 "language": &"GDScript",
@@ -44,6 +54,8 @@ _global_script_class_icons={
 "InteractableEntity": "",
 "InteractionArea": "",
 "InteractionNode": "",
+"InventoryNode": "",
+"Item": "",
 "PianoKeysWidget": "",
 "Player": ""
 }

@@ -1,28 +1,28 @@
 class_name InteractionArea;
 extends Area3D
-@tool
 
 signal interaction_status_signal(is_interaction_enabled : bool);
-signal interaction_triggered();
+signal interaction_triggered(interaction_agent : Node3D);
 
+# is it possible to interact with
+var interaction_enabled : bool = true;
+
+# is player currently highlighting interaction
 var interaction_available : bool = false;
 
-@export var sphere_radius : float = 0.5 : set = set_interaction_radius;
-var interaction_shape : SphereShape3D;
+var interaction_shape : CollisionObject3D;
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	var coll_shape = get_node("CollisionShape3D");
-	interaction_shape = coll_shape.shape as SphereShape3D;
-
-func on_interact():
-	interaction_triggered.emit();
-
-func set_interaction_radius(radius : float):
-	sphere_radius = radius;
-	if interaction_shape:
-		interaction_shape.radius = sphere_radius;
+func on_interact(agent : Node3D):
+	interaction_triggered.emit(agent);
 	
 func set_interaction_status(status : bool):
 	interaction_available = status;
 	interaction_status_signal.emit(interaction_available);
+
+func set_interaction_enabled(enabled : bool):
+	interaction_enabled = enabled;
+	if not interaction_enabled:
+		set_interaction_status(false);
+		
+func is_interaction_enabled() -> bool:
+	return interaction_enabled;

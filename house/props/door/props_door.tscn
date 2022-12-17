@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://vvqbghewn24k"]
+
+[ext_resource type="PackedScene" uid="uid://hm7alhbg01yj" path="res://house/props/interactable_entity.tscn" id="1_onfc0"]
+[ext_resource type="Script" path="res://house/props/door/props_door.gd" id="2_au7t7"]
+[ext_resource type="ArrayMesh" uid="uid://dwofsh6wtpq17" path="res://house/props/door/props_door.res" id="2_gbcqu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wvbn7"]
+size = Vector3(1, 1, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qens5"]
+size = Vector3(1.012, 1.167, 0.271)
+
+[node name="Door" instance=ExtResource("1_onfc0")]
+script = ExtResource("2_au7t7")
+door_status = 0
+
+[node name="CollisionShape" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.497953, 0.926561, 0)
+shape = SubResource("BoxShape3D_wvbn7")
+
+[node name="Mesh" parent="StaticBody3D" index="1"]
+mesh = ExtResource("2_gbcqu")
+
+[node name="InteractionArea" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500098, 1.02292, -6.96778e-05)
+
+[node name="CollisionShape3D" parent="InteractionArea" index="0"]
+shape = SubResource("BoxShape3D_qens5")
+
+[editable path="InteractionArea"]

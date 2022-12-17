@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://1t5eufhwbuit"]
+
+[ext_resource type="PackedScene" uid="uid://hm7alhbg01yj" path="res://house/props/interactable_entity.tscn" id="1_wnioo"]
+[ext_resource type="Script" path="res://house/props/items/pickable_item.gd" id="2_4vguy"]
+
+[node name="PickableItem" instance=ExtResource("1_wnioo")]
+script = ExtResource("2_4vguy")
+item_resource = null

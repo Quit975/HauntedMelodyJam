@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var CameraPivot : Node3D = $CollisionShape3D/CameraPivot
 @onready var Footsteps : FootstepPlayer = %Footsteps
 @onready var Interactions : InteractionNode = %InteractionNode
+@onready var Inventory : InventoryNode = %Inventory
 
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_look_sensitivity : float = ProjectSettings.get_setting("player/mouse_look_sensitivity")
@@ -37,6 +38,8 @@ signal piano_input(action : StringName);
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	previous_position = position;
+	Interactions.owner_agent = self;
+	Inventory.add_item(load("res://house/props/items/keys/test_key.tres"));
 
 func _physics_process(delta):
 	if current_state == PlayerState.NORMAL:

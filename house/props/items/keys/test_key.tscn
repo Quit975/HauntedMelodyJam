@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcs1w5nbhjj5h"]
+
+[ext_resource type="PackedScene" uid="uid://1t5eufhwbuit" path="res://house/props/items/pickable_item.tscn" id="1_1v6m7"]
+[ext_resource type="Resource" uid="uid://c4bhtbh88otyh" path="res://house/props/items/keys/test_key.tres" id="2_ygbxy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3ecs0"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhp72"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="TestKey" instance=ExtResource("1_1v6m7")]
+item_resource = ExtResource("2_ygbxy")
+
+[node name="Mesh" parent="StaticBody3D" index="1"]
+mesh = SubResource("BoxMesh_3ecs0")
+
+[node name="CollisionShape3D" parent="InteractionArea" index="0"]
+shape = SubResource("BoxShape3D_hhp72")
+
+[editable path="InteractionArea"]

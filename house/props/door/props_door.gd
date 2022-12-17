@@ -64,7 +64,7 @@ func calculate_direction(agent_pos : Vector3) -> int:
 	checkpoint = global_position + checkpoint;
 	
 	var vec_to_agent : Vector3 = global_position - agent_pos;
-	var vec_to_checkpoint :Vector3 = global_position - checkpoint;
+	var vec_to_checkpoint : Vector3 = global_position - checkpoint;
 	
 	if vec_to_agent.dot(vec_to_checkpoint) < 0:
 		return -1;

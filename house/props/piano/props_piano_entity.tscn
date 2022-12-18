@@ -10,7 +10,7 @@ size = Vector3(1.557, 1, 0.504)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfm3n"]
 size = Vector3(1.376, 0.516, 0.473)
 
-[node name="Piano" instance=ExtResource("1_e6wrr")]
+[node name="Piano" groups=["piano"] instance=ExtResource("1_e6wrr")]
 script = ExtResource("2_7qmrq")
 
 [node name="CollisionShape" parent="StaticBody3D" index="0"]
